@@ -55,19 +55,19 @@
           {
             "name": "FrontEnd",
             "properties" : {
-              "addressPrefix": "[parameters('FrontendsubnetPrefix')]"
+              "addressPrefix": "[parameters('FrontendPrefix')]"
             }
           },
             {
                 "name": "Midtier",
                 "properties": {
-                    "addressPrefix": "[parameters('MidtiersubnetPrefix')]"
+                    "addressPrefix": "[parameters('MidtierPrefix')]"
                 }
             },
           {
             "name": "Backend",
             "properties" : {
-              "addressPrefix": "[parameters('BackendsubnetPrefix')]"
+              "addressPrefix": "[parameters('BackendPrefix')]"
             }
           }
         ]
