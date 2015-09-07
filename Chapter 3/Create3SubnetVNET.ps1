@@ -63,26 +63,26 @@ Select-AzureSubscription `
     # Create Resource Group
 
     New-AzureResourceGroup `
-    -Name 'ContosoSampleRG' `
+    -Name 'Contoso-Infrastructure' `
     -Location "West US"
 
     # Define Subnets
     
     $frontendSubnet = New-AzureVirtualNetworkSubnetConfig `
-    -Name LB-Subnet-FE -AddressPrefix 10.1.2.0/24
+    -Name Frontend -AddressPrefix 10.1.2.0/24
     
     $midtierSubnet = New-AzureVirtualNetworkSubnetConfig `
-    -Name LB-Subnet-MT -AddressPrefix 10.1.3.0/24
+    -Name Midtier -AddressPrefix 10.1.3.0/24
     
     $backendSubnet = New-AzureVirtualNetworkSubnetConfig `
-    -Name LB-Subnet-BE -AddressPrefix 10.1.4.0/24
+    -Name Backend -AddressPrefix 10.1.4.0/24
 
     
     #Deploy VNET and subnets 
 
     $vnet = New-AzurevirtualNetwork `
         -Name SampleVNet `
-        -ResourceGroupName ContosoSampleRG `
+        -ResourceGroupName Contoso-Infrastructure `
         -Location "West US" `
         -AddressPrefix 10.0.0.0/8 `
         -Subnet $frontendSubnet,$midtierSubnet,$backendSubnet
