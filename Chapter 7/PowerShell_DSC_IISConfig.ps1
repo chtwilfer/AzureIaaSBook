@@ -1,4 +1,5 @@
 ﻿
+# PowerShell DSC (from section 7.3.2.1)
 
 # STEP 1: PowerShell DSC Configuration for IIS Web Server
 # Copy this section to separate file and save as c:\temp\IISInstall.ps1

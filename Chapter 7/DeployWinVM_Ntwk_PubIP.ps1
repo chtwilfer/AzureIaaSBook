@@ -1,4 +1,74 @@
 ﻿
+# This script will create a 3-subnet VNET in Azure V2
+
+# Authenticate to Azure Account
+
+Add-AzureAccount 
+
+# Authenticate with Azure AD credentials
+
+$cred = Get-Credential
+
+Add-AzureAccount -Credential $cred
+
+# Switch to Azure Resource Manager mode
+
+Switch-AzureMode `
+    -Name AzureResourceManager
+
+
+# Register the latest ARM Providers
+
+Register-AzureProvider `
+    -ProviderNamespace Microsoft.Compute `
+    -Force
+
+Register-AzureProvider `
+    -ProviderNamespace Microsoft.Storage `
+    -Force
+
+Register-AzureProvider `
+    -ProviderNamespace Microsoft.Network `
+    -Force
+
+
+# Confirm registered ARM Providers
+
+Get-AzureProvider |
+     Select-Object `
+        -Property ProviderNamespace `
+        -ExpandProperty ResourceTypes 
+        
+# Confirm registered ARM Providers
+
+Get-AzureProvider |
+     Select-Object `
+        -Property ProviderNamespace `
+        -ExpandProperty ResourceTypes
+
+
+# Select an Azure subscription
+
+$subscriptionId = 
+    (Get-AzureSubscription |
+     Out-GridView `
+        -Title "Select a Subscription ..." `
+        -PassThru).SubscriptionId
+
+Select-AzureSubscription `
+    -SubscriptionId $subscriptionId
+    
+# Deploy a Linux VM
+
+Get-AzureVMImage –Location "North Europe" `
+–PublisherName "Canonical" –Offer "UbuntuServer" `
+–Skus "14.04.2-LTS"
+
+$vmimage = Get-AzureVMImage –Location "North Europe" `
+–PublisherName "Canonical" –Offer "UbuntuServer" `
+–Skus "14.04.2-LTS" –Version 14.04.201507060
+
+
 # After you have authenticated to your Azure subscription 
 # Use this to retrieve the list of Windows 2012 images 
 # Only necessary to identify pre-runtime to identify 
