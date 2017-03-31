@@ -1,5 +1,5 @@
 <#
-Chapter 6 - Creating a NAT Rule to an existing Virtual Machine - Example Code
+Chapter 6 - Creating a NAT Rule for an existing Virtual Machine - Example Code
 #>
 
 # Create a new Public IP Address
