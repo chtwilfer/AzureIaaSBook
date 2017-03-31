@@ -37,7 +37,6 @@ $HealthProbe = New-AzureRmLoadBalancerProbeConfig `
     -IntervalInSeconds 15 `
     -ProbeCount 1 
 
-
 $AzureLB = New-AzureRmLoadBalancer `
     -ResourceGroupName "iaas-vm-demo" `
     -Name "iaas-vm-lb" `
