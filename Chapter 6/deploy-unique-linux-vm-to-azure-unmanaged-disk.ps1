@@ -65,8 +65,8 @@ Syntax:           ./deploy-unique-linux-vm-to-azure-unmanaged-disk.ps1 `
                   -ResourceGroupName <RESOURCE_GROUP_NAME> `
                   -StorageAccountName <STORAGE_ACCOUNT_NAME> `
                   -StorageAccountType <STORAGE_ACCOUNT_TYPE> `
-				  -LocalAdminUsername <LOCAL_ADMIN_USERNAME> `
-				  -LocalAdminPassword <LOCAL_ADMIN_PASSWORD> `
+		  -LocalAdminUsername <LOCAL_ADMIN_USERNAME> `
+		  -LocalAdminPassword <LOCAL_ADMIN_PASSWORD> `
                   -Location <DEPLOYMENT_LOCATION>
 
 Example:          ./deploy-unique-linux-vm-to-azure-unmanaged-disk.ps1 `
